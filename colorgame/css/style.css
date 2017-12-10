@@ -1,0 +1,62 @@
+body{
+	margin: 0px;
+	background-color: #232323;
+
+}
+#header{
+	background-color: steelblue;
+	font-size: 4em;
+	width: 100%;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#navbar{
+	background-color: white;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+#container{
+	margin:1.5em auto;
+	max-width: 600px;}
+
+button{
+	font-size: 1em;
+	border: none;
+	background-color: white;
+}
+
+#easybtn{
+	margin-left: 2em;
+}
+
+button:hover{
+	background-color: steelblue;
+	color:white;
+}
+
+#result{
+	display: inline-block;
+width: 15%;
+margin-left: 2em;
+text-transform: uppercase;
+font-weight: 900;
+}
+
+.tile{
+	background-color: red;
+	padding: 0.5em;
+	margin: 0.5em;
+	height: 10em;
+	width: 10em;
+	border-radius: 17%;
+	float: left;
+	
+	transition: background-color 0.5s ease-in-out;
+	-webkit-transition: background-color 0.5s ease-in-out;
+	-moz-transition: background-color 0.5s ease-in-out;
+}
