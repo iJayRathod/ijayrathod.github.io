@@ -2,7 +2,6 @@ body
 {
 background-image:url("../img/dmitri.jpg");
 margin: 0;
-background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
 
@@ -15,10 +14,11 @@ background-size: cover;
 }
 
 #header{
+	word-wrap: break-word;
 	width: 100%;
 	font-size: 1.7em;
 	margin: 0;
-	background-color: steelblue;
+	background-color: #c00000;
 	color: white;
 	text-transform: uppercase;
 	color:white;
@@ -42,16 +42,18 @@ background-size: cover;
 
 #todoInput{
 	box-sizing: border-box;
-	background-color:#ecf2f7;
+	background-color:#ffb2b2;
 	font-size:1.4em;
 	box-sizing: border-box;
 	width:100%;
 	padding: 0.5em 0.5em 0.5em 1em;
+	display: none;
 }
 #todoInput:focus {
+	margin: 0;
 	background-color: white;
-	color:steelblue;
-	border:2px solid steelblue;
+	color:#7f0000;
+	border:2px solid red;
 }
 
 ul{
@@ -64,7 +66,9 @@ li{
 	font-size: 1em;
 	width: 100%;
 	box-sizing: border-box;
-	height: 2.8em;
+	//height: 2.8em;
+	word-wrap: break-word;
+	height: auto;
 }
 .bin{
 	opacity: 0;
@@ -87,5 +91,11 @@ li:hover span{
 	margin-right: 2.3em;
 	width: 1.4em;
 	opacity: 1.0;
+}
+
+
+.done{
+	text-decoration: line-through;
+	color: #ff4c4c;
 }
 
