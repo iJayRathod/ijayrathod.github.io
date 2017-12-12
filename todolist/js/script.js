@@ -8,6 +8,11 @@ $("#todoInput").val("");
 $("#todoInput").keypress(function(event){
 if (event.which == 13) {
 		var addTodoText = $(this).val();
+		console.log(addTodoText.length);
+		if(addTodoText.length>36){
+			alert("Todo list size should be less than 33 characters!");
+			return;
+		}
 		console.log(addTodoText);
 		$(this).val("");
 		if(!addTodoText){
@@ -33,10 +38,14 @@ alert("Don't ask us to clean your shit!!");
 });
 
 $(".fa-pencil").click(function() {
-	var headingContent = prompt("Enter To Do List Heading for your reference", "To Do List 1");
+	var headingContent = prompt("Enter To Do List Heading for your reference", "New ToDo List");
 	if (!headingContent)
 	{
 		headingContent = "To Do List";
+	}
+	if (headingContent.length > 13) {
+			alert("Heading size should be less than 15 characters!");
+			return;
 	}
 	$("#headerText").text(headingContent);
 
