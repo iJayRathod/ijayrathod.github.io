@@ -69,6 +69,7 @@ function uploadData(){
 	var chef= $("#chef").val();
 	var countRadioGroups =parseInt($("#countRadioGroups").val());
 	var customizations= $("#customizations").val();
+
 	
 	if(validate()){
 			progressLoader();
@@ -82,7 +83,21 @@ function uploadData(){
 							// Handle successful uploads on complete
 							// For instance, get the download URL: https://firebasestorage.googleapis.com/...
 							var downloadURL = uploadTask.snapshot.downloadURL;
-							var restDish = {
+							var restDish;
+							if(customizations=="no"){
+										var restDish = {
+										    item_name: item_name,
+										    item_price: item_price,
+										    photo_url :downloadURL,
+										    description: description,
+										    item_category: item_category,
+										    sub_category: sub_category,
+										    ingredients: ingredients,
+										    eta: eta,
+										    chef: chef								
+										};	
+									}else{
+										var restDish = {
 										    item_name: item_name,
 										    item_price: item_price,
 										    photo_url :downloadURL,
@@ -95,7 +110,8 @@ function uploadData(){
 										    countRadioGroups: 1,
 										    customization01: customizations
 										};	
-
+									}
+							
 							//alert(JSON.stringify(restDish));
 							var firebaseRef=firebase.database().ref();	
 							firebaseRef.child("menus").push().set(restDish);
