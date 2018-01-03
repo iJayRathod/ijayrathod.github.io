@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<title>Splash Brothers</title>
+</head>
+<body>
+	<div class="w3-light-grey" style="display: none">
+  <div id="myBar" class="w3-container w3-green" style="height:24px;width:0%"></div>
+  </div>
+	<div id="container">
+	<h1> Akkha Masoor DataSheet</h1>
+</br>
+<div id="loginProcess" style="display: none;">
+	Sign In:<input type="text" name="txtname" id="txtname" size="35" /><br><br>
+	Password:<input type="Password" name="txtpwd" id="txtpwd" size="35" /><br><br>
+	<input type="button" onclick="submitClick()" value="submit"/>
+</div>
+
+<div id="restaurantForm" style="display: none;">
+	
+		<button id="logout" onclick="logoutClick()">logout</button>
+	
+	<form method="post" id="myForm">
+	item name:<input type="text" name="item_name" id="item_name" size="35" /><br><br>
+	item price:<input type="number" name="item_price" id="item_price" size="35" /><br><br>
+	photo url:<input type="file" name="fileName" id="fileName" ><br><br>
+	description:<br>
+				<textarea name="description" id="description" cols="100" rows="5"></textarea><br><br>
+	category:<select id="item_category">
+				<option value="cat04">breakfast</option>
+				<option value="cat01">starters</option>
+				<option value="cat02">main course</option>
+				<option value="cat03">tandoor/rice</option>
+				<option value="cat05">desserts/beverages</option>
+			</select><br><br>
+	Sub-category:<select id="sub_category">
+				<option value="morning_beverages">Morning Beverages</option>
+				<option value="south_indian">South Indian</option>
+				<option value="maharashtrian">Maharashtrian</option>
+				<option value="soups">Soup</option>
+				<option value="papads">Papad</option>
+				<option value="tandoor">Tandoor</option>
+				<option value="chinese">Chinese</option>
+				<option value="punjabi">Punjabi</option>
+				<option value="kofta_special">Kofta Special</option>
+				<option value="dry_veg">Dry Veg</option>
+				<option value="dal">Dal Ka Jalwa</option>	
+				<option value="rice">Rice Ke Diwane</option>
+				<option value="mocktails">Mocktails</option>
+				<option value="mastani">Mastani</option>
+				<option value="juices_shakes">Juices And Shakes</option>
+			</select><br><br>
+	ingredients:<br><textarea  name="ingredients" id="ingredients" rows="5" cols="100"></textarea><br><br>
+	eta:<input type="number" name="eta" id="eta"/><br><br>
+	chef:<select id="chef" name="chef">
+		<option value="A">South Indian</option>
+		<option value="B">Indian/Chinese</option>
+		<option value="C">Tandoor</option>
+		<option value="D">pantry</option>
+	</select><br><br>
+
+	How many customizations? :<input type="number" id="countRadioGroups" name="countRadioGroups" value="1" disabled="disabled" /><br><br>
+	select customizations:<select id="customizations">
+							<option value="cust01">Sugar customization</option>
+							<option value="cust02">Ice customization</option>
+							<option value="cust03">Spicy customization</option>					
+						</select><br>
+
+	<button type="submit" onclick="return uploadData()">Submit</button>	
+</form>
+	
+</div>
+ </div>
+ 
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBZpfuA-LnjKKpX8jMc_lZxmpQDSsOKHL4",
+    authDomain: "restaurant-app-6d6d4.firebaseapp.com",
+    databaseURL: "https://restaurant-app-6d6d4.firebaseio.com",
+    projectId: "restaurant-app-6d6d4",
+    storageBucket: "restaurant-app-6d6d4.appspot.com",
+    messagingSenderId: "281039907018"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
