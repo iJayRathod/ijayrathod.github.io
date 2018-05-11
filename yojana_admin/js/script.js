@@ -47,7 +47,8 @@ function uploadData(){
 										};	
 					
 							var firebaseRef=firebase.database().ref();	
-							firebaseRef.child("topics").push().set(restDish);
+							console.log(firebaseRef);
+							firebaseRef.push().set(restDish);
 							$("#myForm")[0].reset();
 							alert("data uploaded successfully");
 						});
