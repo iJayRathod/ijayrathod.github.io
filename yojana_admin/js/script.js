@@ -40,19 +40,12 @@ function uploadData(){
 							var restDish;
 							
 										var restDish = {
-										    item_name: item_name,
-										    item_price: item_price,
 										    photo_url :downloadURL,
 										    description: description,
 										    item_category: item_category,
-										    sub_category: sub_category,
-										    ingredients: ingredients,
-										    eta: eta,
-										    chef: chef								
+										    sub_category: sub_category							
 										};	
-								
-							
-							//alert(JSON.stringify(restDish));
+					
 							var firebaseRef=firebase.database().ref();	
 							firebaseRef.child("topics").push().set(restDish);
 							$("#myForm")[0].reset();
