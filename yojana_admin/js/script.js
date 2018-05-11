@@ -4,31 +4,6 @@ var selectedFile;
 var firebaseRef = firebase.database().ref();
 
 
-
-function submitClick(){
-	// var email=uname.value;
-	// var password=upass.value;
-	// progressLoader();
-
-	// firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-	// 	// Handle Errors here.
-	// 	var errorCode = error.code;
-	// 	var errorMessage = error.message;
-	// 	alert("Error in signing in: "+errorMessage+"\n	Please contact admin!");
-	// 	});
-	// }
-
-	// function logoutClick(){
-	// 		firebase.auth().signOut().then(function() {
-	// 		// Sign-out successful.
-	// 		alert("Sign out successful!");
-	// }).catch(function(error) {
-	// 		// An error happened.
-	// 		alert("sign out error");
-	// });
-}
-
-
 $("#fileName").on("change",function(event){
 			 var fileInput = document.querySelector('#fileName');
     var filePath = fileInput.value;
@@ -136,6 +111,5 @@ function progressLoader(){
 
 
 function isnum(str){
-	 
   return /^[0-9]*$/.test(str);
 }
