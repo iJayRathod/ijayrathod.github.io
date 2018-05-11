@@ -6,9 +6,9 @@ var firebaseRef = firebase.database().ref();
 
 
 function submitClick(){
-	var email=uname.value;
-	var password=upass.value;
-	progressLoader();
+	// var email=uname.value;
+	// var password=upass.value;
+	// progressLoader();
 
 	// firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
 	// 	// Handle Errors here.
