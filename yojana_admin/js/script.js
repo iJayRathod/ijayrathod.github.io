@@ -27,7 +27,7 @@ function uploadData(){
 	
 	if(validate()){
 			progressLoader();
-			var uploadTask =firebase.storage().ref('/Images/'+selectedFile.name).put(selectedFile);
+			var uploadTask =firebase.storage().ref('/images/'+selectedFile.name).put(selectedFile);
 				uploadTask.on('state_changed', function(snapshot){
 							// Observe state change events such as progress, pause, and resum
 					}, function(error) {
@@ -40,15 +40,22 @@ function uploadData(){
 							var restDish;
 							
 										var restDish = {
-										    photo_url :downloadURL,
+										    // photo_url : downloadURL,
 										    description: description,
 										    item_category: item_category,
 										    sub_category: sub_category							
 										};	
 					
 							var firebaseRef=firebase.database().ref();	
-							console.log(firebaseRef);
-							firebaseRef.push().set(restDish);
+					firebaseRef.on("value", function(snapshot) {
+  console.log(snapshot.val());
+  console.log(restDish);
+  console.log("HELLO"+downloadURL+"changed"+uploadTask);
+
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
+							firebaseRef.child("topics").push().set(restDish);
 							$("#myForm")[0].reset();
 							alert("data uploaded successfully");
 						});
